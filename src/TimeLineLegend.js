@@ -10,26 +10,25 @@ export class TimeLineLegend {
      * @param context
      * @param config
      *      data: {
-         *          label: {
-         *              text: '队列名称'
-         *          },
-         *          info:{
-         *              text: '图中数字为并行队列使用的CPU核心数'
-         *          },
-         *          class_styles: [
-         *              {class_name:'unknown', color: '#bdbdbd'},
-         *          ]
-         *      },
+     *          label: {
+     *              text: '队列名称'
+     *          },
+     *          info:{
+     *              text: '图中数字为并行队列使用的CPU核心数'
+     *          },
+     *          class_styles: [
+     *              {class_name:'unknown', color: '#bdbdbd'},
+     *          ]
+     *      },
      *      options: {
-         *          size: {
-         *              height: 50,
-         *              width: 1800
-         *          },
-         *          start_point: {
-         *              x: 250
-         *          }
-         *      }
-     * @constructor
+     *          size: {
+     *              height: 50,
+     *              width: 1800
+     *          },
+     *          start_point: {
+     *              x: 250
+     *          }
+     *      }
      */
     constructor(context, config){
         this.context = context;

@@ -15,30 +15,29 @@ export class TimeLine {
      *
      * @param config 选项
      *      {
-         *          type: 'timeline',
-         *          data: {
-         *              class_styles: [
-         *              ],
-         *              data:[
-         *                  {class_name:'unknown', color: '#bdbdbd'},
-         *              ]
-         *          },
-         *          options: {
-         *              size: {
-         *                  width: 1800,
-         *                  height: 1000
-         *              },
-         *              start_point: {
-         *                  x: 250,
-         *                  y: 30
-         *              },
-         *              row: {
-         *                  interval: 30,
-         *                  bar_height: 20
-         *              }
-         *          }
-         *      }
-     * @constructor
+     *          type: 'timeline',
+     *          data: {
+     *              class_styles: [
+     *              ],
+     *              data:[
+     *                  {class_name:'unknown', color: '#bdbdbd'},
+     *              ]
+     *          },
+     *          options: {
+     *              size: {
+     *                  width: 1800,
+     *                  height: 1000
+     *              },
+     *              start_point: {
+     *                  x: 250,
+     *                  y: 30
+     *              },
+     *              row: {
+     *                  interval: 30,
+     *                  bar_height: 20
+     *              }
+     *          }
+     *      }
      */
     constructor(context, config) {
         this.context = context;
