@@ -9,7 +9,7 @@
   },
   "scripts": {
     "build": "webpack",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "author": {
     "name": "perillaroc",
@@ -25,11 +25,18 @@
   },
   "devDependencies": {
     "babel-core": "^6.21.0",
+    "babel-jest": "^18.0.0",
     "babel-loader": "^6.2.10",
+    "babel-polyfill": "^6.20.0",
     "babel-preset-es2015": "^6.18.0",
     "css-loader": "^0.26.1",
+    "jest": "^18.1.0",
+    "jest-cli": "^18.1.0",
     "source-map-loader": "^0.1.5",
     "style-loader": "^0.13.1",
     "webpack": "^2.2.0-rc.3"
+  },
+  "jest": {
+    "testRegex": ".*-test.js"
   }
 }
