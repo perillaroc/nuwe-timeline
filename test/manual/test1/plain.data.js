@@ -1,4 +1,4 @@
-var data = [
+export let data = [
     {
         "label": "gda_gsi_v1r5",
         "times": [

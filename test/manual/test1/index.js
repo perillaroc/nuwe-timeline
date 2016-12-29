@@ -1,3 +1,6 @@
+import {TimeLine, TimeLineLegend} from '../../../src/index'
+import {data} from './plain.data'
+
 let class_styles = [
     {class_name:'unknown', color: '#bdbdbd'},
     {class_name:'serial',  color: '#4575b4'},
@@ -10,7 +13,7 @@ let class_styles = [
     {class_name:'largemem', color: '#67000d'}
 ];
 
-var my_timeline = new nwpc.timeline.TimeLine(document.getElementById("time-line-container"),{
+let my_timeline = new TimeLine(document.getElementById("time-line-container"),{
     type: 'timeline',
     data: {
         class_styles: class_styles,
@@ -23,7 +26,7 @@ var my_timeline = new nwpc.timeline.TimeLine(document.getElementById("time-line-
     }
 });
 
-var my_timeline_legend = new nwpc.timeline.TimeLineLegend("#time-line-container-legend", {
+let my_timeline_legend = new TimeLineLegend("#time-line-container-legend", {
     data: {
         class_styles: class_styles
     }
