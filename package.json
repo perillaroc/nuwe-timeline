@@ -1,11 +1,12 @@
 {
   "name": "nuwe-timeline",
-  "version": "0.1.0",
+  "homepage": "https://www.github.com/perillaroc/nuwe-timeline",
   "description": "A time line chart for operation systems of NWPC",
-  "main": "index.js",
-  "directories": {
-    "doc": "docs",
-    "test": "test"
+  "version": "0.1.0",
+  "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://www.github.com/perillaroc/nuwe-timeline.git"
   },
   "scripts": {
     "build": "webpack",
