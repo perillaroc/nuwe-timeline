@@ -1,0 +1,14 @@
+{
+  "name": "nwpc-operation-system",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "nuwe-timeline": "^0.1.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.21.0",
+    "babel-loader": "^6.2.10",
+    "babel-preset-es2015": "^6.18.0",
+    "webpack": "^2.2.0-rc.3"
+  }
+}
