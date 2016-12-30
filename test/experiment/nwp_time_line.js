@@ -13,7 +13,7 @@ var chart_option = {
         'x': 250,
         'y': 30
     },
-    'suite': {
+    'row': {
         'interval': 30,
         'bar_height': 20
     }

@@ -51,7 +51,6 @@ describe('options-size', ()=> {
         let chart_svg_list = chart_container.getElementsByTagName("svg");
         expect(chart_svg_list.length).toBe(1);
         let chart_svg = d3selection.select(chart_svg_list[0]);
-        expect(chart_svg).toBe(chart.chart);
         expect(Number.parseInt(chart_svg.attr('width'))).toBe(chart_config.options.size.width);
         expect(Number.parseInt(chart_svg.attr('height'))).toBe(chart_config.options.size.height);
     });
