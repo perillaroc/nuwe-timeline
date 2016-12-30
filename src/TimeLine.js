@@ -96,7 +96,7 @@ export class TimeLine {
         }
 
         // generate necessary objects
-        this.drawTimeLineChart(this.context, this.config);
+        this.chart = this.drawTimeLineChart(this.context, this.config);
     }
 
     drawTimeLineChart(context, config) {
@@ -255,6 +255,7 @@ export class TimeLine {
             })
             .attr("dominant-baseline", "central")
             .attr("text-anchor", "start");
+        return svg;
     }
 }
 
