@@ -1,19 +1,21 @@
 # nuwe-timeline
 
-时间线，最初为NWPC业务系统运行时间图开发。
+A time line chart library, which is developed for running time of operation systems in NWPC.
 
-## 安装
+## Installing
 
-可以从 [Github releases](https://github.com/perillaroc/nuwe-timeline/releases) 中下载最新版，
-或者通过 npm 安装：
+### npm
 
 ```
 npm install nuwe-timeline
 ```
+### Source code
 
-## 开始使用
+Download the latest version from [Github releases](https://github.com/perillaroc/nuwe-timeline/releases).
 
-使用ES 6模块导入方法：
+## Getting started
+
+Import nuwe-timeline using ES 6 module：
 
 ```javascript
 import {TimeLine, TimeLineLegend} from 'nuwe-timeline'
@@ -21,7 +23,9 @@ let chart = TimeLine(some_id, {...});
 let chart_legend = TimeLineLegend(some_id, {...});
 ```
 
-页面：
+The following example is a simple web page with a nuwe-timeline chart and a nuwe-timeline chart legend.
+
+The web page is shown below.
 
 ```html
 <!DOCTYPE html>
@@ -36,81 +40,12 @@ let chart_legend = TimeLineLegend(some_id, {...});
 <div id="time-line-container-legend"></div>
 <div id="time-line-container"></div>
 
-<script src="./dist/test1.bundle.js"></script>
+<script src="./dist/bundle.js"></script>
 </body>
 </html>
 ```
-
-数据：
-
-```javascript
-let data = [
-    {
-        "label": "gda_gsi_v1r5",
-        "times": [
-            {
-                "class": "serial_op",
-                "start_time": "09:00:59",
-                "end_time": "10:01:02",
-                "name": "00",
-                "label": "640"
-            },
-            {
-                "class": "operation",
-                "start_time": "09:41:21",
-                "end_time": "09:46:10",
-                "name": "00"
-            },
-            {
-                "class": "serial_op",
-                "start_time": "13:11:00",
-                "end_time": "14:12:10",
-                "name": "06",
-                "label": "640"
-            },
-            {
-                "class": "operation",
-                "start_time": "13:51:50",
-                "end_time": "13:57:15",
-                "name": "06"
-            }
-        ]
-    },
-    {
-        "label" : "gmf_gsi_v1r5",
-        "times" : [
-            {
-                "name" : "00",
-                "start_time" : "02:59:10",
-                "label" : "640",
-                "end_time" : "05:18:42",
-                "class" : "serial_op"
-            },
-            {
-                "class" : "operation",
-                "start_time" : "03:42:51",
-                "end_time" : "04:46:22",
-                "name" : "00"
-            },
-            {
-                "name" : "06",
-                "start_time" : "10:45:51",
-                "label" : "640",
-                "end_time" : "12:42:35",
-                "class" : "serial_op"
-            },
-            {
-                "class" : "operation",
-                "start_time" : "11:25:01",
-                "end_time" : "12:00:19",
-                "name" : "06"
-           }
-        ]
-    }
-]
-```
-
-配置：
+To draw a timeline, a config object is needed. 
+The simplest config object contains time data and class styles.
 
 ```javascript
 let config = {
@@ -127,14 +62,104 @@ let config = {
             {class_name:'normal',  color: '#cb181d'},
             {class_name:'largemem', color: '#67000d'}
         ],
-        data: data
+        data: [           
+            {
+                
+                "label": "gda_gsi_v1r5",
+                "times": [
+                    {
+                        "class": "serial_op",
+                        "start_time": "09:00:59",
+                        "end_time": "10:01:02",
+                        "name": "00",
+                        "label": "640"
+                    },
+                    {
+                        "class": "operation",
+                        "start_time": "09:41:21",
+                        "end_time": "09:46:10",
+                        "name": "00"
+                    },
+                    {
+                        "class": "serial_op",
+                        "start_time": "13:11:00",
+                        "end_time": "14:12:10",
+                        "name": "06",
+                        "label": "640"
+                    },
+                    {
+                        "class": "operation",
+                        "start_time": "13:51:50",
+                        "end_time": "13:57:15",
+                        "name": "06"
+                    }
+                ]
+            },
+            {
+                "label" : "gmf_gsi_v1r5",
+                "times" : [
+                    {
+                        "name" : "00",
+                        "start_time" : "02:59:10",
+                        "label" : "640",
+                        "end_time" : "05:18:42",
+                        "class" : "serial_op"
+                    },
+                    {
+                        "class" : "operation",
+                        "start_time" : "03:42:51",
+                        "end_time" : "04:46:22",
+                        "name" : "00"
+                    },
+                    {
+                        "name" : "06",
+                        "start_time" : "10:45:51",
+                        "label" : "640",
+                        "end_time" : "12:42:35",
+                        "class" : "serial_op"
+                    },
+                    {
+                        "class" : "operation",
+                        "start_time" : "11:25:01",
+                        "end_time" : "12:00:19",
+                        "name" : "06"
+                   }
+                ]
+            }
+        ]
     }
 }
 ```
 
-绘图：
+It is very simple to draw a timeline chart and its legend.
 
 ```javascript
 let my_timeline = new TimeLine(document.getElementById("time-line-container"), config);
 let my_timeline_legend = new TimeLineLegend("#time-line-container-legend", config);
 ```
+
+## Example
+
+Please see examples directory.
+
+## Build
+
+Use webpack2 to build. Please install webpack2 and run the following command in project's root directory.
+
+```bash
+webpack
+```
+
+## Test
+
+Use Jest framework to test. Please install jest and jest-cli and run the following command in project's root directory.
+
+```bash
+jest
+```
+
+## License
+
+Copyright (C) 2016 Perilla Roc.
+
+nuwe-timeline is licensed under [The MIT License](https://opensource.org/licenses/MIT).
