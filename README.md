@@ -34,7 +34,6 @@ The web page is shown below.
     <meta charset="UTF-8">
     <title>Test 1</title>
 </head>
-<link rel="stylesheet" href="./dist/timeline.css" />
 <body>
 
 <div id="time-line-container-legend"></div>

@@ -2,7 +2,7 @@
   "name": "nuwe-timeline",
   "homepage": "https://github.com/perillaroc/nuwe-timeline",
   "description": "A time line chart for operation systems of NWPC",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "main": "src/index.js",
   "repository": {
     "type": "git",
