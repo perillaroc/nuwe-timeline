@@ -43,11 +43,12 @@ The web page is shown below.
 </body>
 </html>
 ```
+
 To draw a timeline, a config object is needed. 
 The simplest config object contains time data and class styles.
 
 ```javascript
-let config = {
+let chart_config = {
     type: 'timeline',
     data: {
         class_styles: [
@@ -130,11 +131,32 @@ let config = {
 }
 ```
 
-It is very simple to draw a timeline chart and its legend.
+It is very simple to draw a timeline chart.
 
 ```javascript
-let my_timeline = new TimeLine(document.getElementById("time-line-container"), config);
-let my_timeline_legend = new TimeLineLegend("#time-line-container-legend", config);
+let my_timeline = new TimeLine(document.getElementById("time-line-container"), chart_config);
+```
+
+A config object is also needed to draw a timeline legend.
+
+```javascript
+let legend_config = {
+    data: {
+        class_styles: [
+            {class_name:'unknown', color: '#bdbdbd'},
+            {class_name:'serial',  color: '#4575b4'},
+            {class_name:'serial_op',  color: '#74add1'},
+            {class_name:'serial_op1', color: '#deebf7'},
+            {class_name:'operation', color: '#cc4c02'},
+            {class_name:'operation1',  color: '#f46d43'},
+            {class_name:'operation2',  color: '#feb24c'},
+            {class_name:'normal',  color: '#cb181d'},
+            {class_name:'largemem', color: '#67000d'}
+        ]
+    }
+};
+
+let my_timeline_legend = new TimeLineLegend("#time-line-container-legend", legend_config);
 ```
 
 ## Example
@@ -143,7 +165,7 @@ Please see examples directory.
 
 ## Build
 
-Use webpack2 to build. Please install webpack2 and run the following command in project's root directory.
+Use webpack to build. Please install webpack and run the following command in project's root directory.
 
 ```bash
 webpack
@@ -159,6 +181,6 @@ jest
 
 ## License
 
-Copyright (C) 2016 Perilla Roc.
+Copyright (C) 2016-2017 Perilla Roc.
 
 nuwe-timeline is licensed under [The MIT License](https://opensource.org/licenses/MIT).

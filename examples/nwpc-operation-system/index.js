@@ -1,5 +1,6 @@
-import {TimeLine, TimeLineLegend} from 'nuwe-timeline'
-import {data} from './plain.data'
+import {TimeLine, TimeLineLegend} from '../../src/index'
+
+let data = require("./data.json");
 
 let class_styles = [
     {class_name:'unknown', color: '#bdbdbd'},
