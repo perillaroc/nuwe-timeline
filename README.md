@@ -165,15 +165,16 @@ Please see examples directory.
 
 ## Build
 
-Use webpack to build. Please install webpack and run the following command in project's root directory.
+Use webpack to build. Please install webpack globally using npm and run the following commands in project's root directory.
 
 ```bash
-webpack
+npm install
+npm run build
 ```
 
 ## Test
 
-Use Jest framework to test. Please install jest and jest-cli and run the following command in project's root directory.
+Use Jest framework to test. Please install jest-cli globally using npm and run the following command in project's root directory.
 
 ```bash
 jest
