@@ -19,11 +19,6 @@ let my_timeline = new TimeLine(document.getElementById("time-line-container"),{
     data: {
         class_styles: class_styles,
         data: data
-    },
-    options: {
-        size: {
-            'width': 1400
-        }
     }
 });
 
