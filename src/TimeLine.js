@@ -8,7 +8,7 @@ export let class_name = "nuwe-timeline";
 
 export class TimeLine {
     /**
-     * 时间线
+     * time line chart.
      * @param context the container to draw the chart. context may be any type supported by d3.select, such as：
      *      "#time-line-container"
      *      document.getElementById("time-line-container")

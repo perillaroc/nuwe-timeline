@@ -131,6 +131,8 @@ let chart_config = {
 }
 ```
 
+For more details about time line data, please see [Time Line Data Structure](./docs/time_line_data.md).
+
 It is very simple to draw a timeline chart.
 
 ```javascript

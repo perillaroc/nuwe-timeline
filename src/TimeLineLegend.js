@@ -6,7 +6,7 @@ import {TimeLine, class_name} from './TimeLine'
 
 export class TimeLineLegend {
     /**
-     * 时间线图示
+     * legend for time line chart
      * @param context
      * @param config
      *      data: {
