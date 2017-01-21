@@ -24,6 +24,12 @@ let my_timeline = new TimeLine(document.getElementById("time-line-container"),{
 
 let my_timeline_legend = new TimeLineLegend("#time-line-container-legend", {
     data: {
+        label: {
+            text: 'Class Name'
+        },
+        info:{
+            text: 'The number in the following chart is the number of cpu cores used for parallel jobs.'
+        },
         class_styles: class_styles
     }
 });

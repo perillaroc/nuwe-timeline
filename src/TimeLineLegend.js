@@ -11,10 +11,10 @@ export class TimeLineLegend {
      * @param config
      *      data: {
      *          label: {
-     *              text: '队列名称'
+     *              text: ''
      *          },
      *          info:{
-     *              text: '图中数字为并行队列使用的CPU核心数'
+     *              text: ''
      *          },
      *          class_styles: [
      *              {class_name:'unknown', color: '#bdbdbd'},
@@ -161,10 +161,10 @@ export class TimeLineLegend {
 TimeLineLegend.default = {
     data: {
         label: {
-            text: '队列名称'
+            text: ''
         },
         info:{
-            text: '图中数字为并行队列使用的CPU核心数'
+            text: ''
         },
         class_styles: [
             {class_name:'unknown', color: '#bdbdbd'}

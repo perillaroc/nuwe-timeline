@@ -9,11 +9,11 @@ export let class_name = "nuwe-timeline";
 export class TimeLine {
     /**
      * 时间线
-     * @param context 绘制图形的容器，可以是 d3.select 支持的任意类型，例如：
+     * @param context the container to draw the chart. context may be any type supported by d3.select, such as：
      *      "#time-line-container"
      *      document.getElementById("time-line-container")
      *
-     * @param config 选项
+     * @param config
      *      {
      *          type: 'timeline',
      *          data: {
