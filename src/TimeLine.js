@@ -4,6 +4,8 @@ import * as d3selection from 'd3-selection'
 import * as d3scale from 'd3-scale'
 import * as d3axis from 'd3-axis'
 
+import {mergeConfig} from './config'
+
 export let class_name = "nuwe-timeline";
 
 export class TimeLine {
@@ -46,54 +48,17 @@ export class TimeLine {
         this.color_domain = [];
         this.color_range = [];
 
-        // merge config
-        Object.assign(this.config, TimeLine.default);
+        this.config = mergeConfig(TimeLine.default, config);
 
-        if(config.hasOwnProperty('options')) {
-            let options = this.config.options;
-            let user_options = config.options;
-
-            if(user_options.hasOwnProperty("size")) {
-                Object.keys(user_options.size).forEach(function (key) {
-                    options.size[key] = user_options.size[key];
-                });
-            }
-
-            if(user_options.hasOwnProperty("start_point")) {
-                Object.keys(user_options.start_point).forEach(function (key) {
-                    options.start_point[key] = user_options.start_point[key];
-                });
-            }
-
-            if(user_options.hasOwnProperty("row")) {
-                Object.keys(user_options.row).forEach(function (key) {
-                    options.row[key] = user_options.row[key];
-                });
-            }
-        }
-
-        if(config.hasOwnProperty("data")) {
-            let data = this.config.data;
-            let user_data = config.data;
-
-            if(user_data.hasOwnProperty("class_styles")) {
-                data.class_styles = user_data.class_styles;
-
-                let color_domain = this.color_domain;
-                let color_range = this.color_range;
-                data.class_styles.forEach(function(a_class){
-                    color_domain.push(a_class.class_name);
-                    color_range.push(a_class.color);
-                });
-                this.color_scale = d3scale.scaleOrdinal()
-                    .domain(color_domain)
-                    .range(color_range);
-            }
-
-            if(user_data.hasOwnProperty("data")) {
-                data.data = user_data.data;
-            }
-        }
+        let color_domain = this.color_domain;
+        let color_range = this.color_range;
+        this.config.data.class_styles.forEach(function(a_class){
+            color_domain.push(a_class.class_name);
+            color_range.push(a_class.color);
+        });
+        this.color_scale = d3scale.scaleOrdinal()
+            .domain(color_domain)
+            .range(color_range);
 
         // generate necessary objects
         this.chart = this.drawTimeLineChart(this.context, this.config);
