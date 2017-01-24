@@ -2,6 +2,7 @@ import * as d3selection from 'd3-selection'
 import * as d3scale from 'd3-scale'
 
 import {TimeLine, class_name} from './TimeLine'
+import {mergeConfig} from './config'
 
 
 export class TimeLineLegend {
@@ -32,63 +33,21 @@ export class TimeLineLegend {
      */
     constructor(context, config){
         this.context = context;
-        this.config = {};
 
-        this.color_scale = null;
         this.color_domain = [];
         this.color_range = [];
 
-        // merge config
-        Object.assign(this.config, TimeLineLegend.default);
+        this.config = mergeConfig(TimeLineLegend.default, config);
 
-
-        if(config.hasOwnProperty('options')){
-            let options = this.config.options;
-            let user_options = config.options;
-
-            if(user_options.hasOwnProperty("size")) {
-                Object.keys(user_options.size).forEach(function (key) {
-                    options.size[key] = user_options.size[key];
-                });
-            }
-
-            if(user_options.hasOwnProperty("start_point")) {
-                Object.keys(user_options.start_point).forEach(function (key) {
-                    options.start_point[key] = user_options.start_point[key];
-                });
-            }
-        }
-
-        if(config.hasOwnProperty('data')){
-            let data = this.config.data;
-            let user_data = config.data;
-
-            if(user_data.hasOwnProperty("class_styles")) {
-                data.class_styles = user_data.class_styles;
-
-                let color_domain = this.color_domain;
-                let color_range = this.color_range;
-                data.class_styles.forEach(function(a_class){
-                    color_domain.push(a_class.class_name);
-                    color_range.push(a_class.color);
-                });
-                this.color_scale = d3scale.scaleOrdinal()
-                    .domain(color_domain)
-                    .range(color_range);
-            }
-
-            if(user_data.hasOwnProperty("label")) {
-                Object.keys(user_data.label).forEach(function (key) {
-                    data.label[key] = user_data.label[key];
-                });
-            }
-
-            if(user_data.hasOwnProperty("info")) {
-                Object.keys(user_data.info).forEach(function (key) {
-                    data.info[key] = user_data.info[key];
-                });
-            }
-        }
+        let color_domain = this.color_domain;
+        let color_range = this.color_range;
+        this.config.data.class_styles.forEach(function(a_class){
+            color_domain.push(a_class.class_name);
+            color_range.push(a_class.color);
+        });
+        this.color_scale = d3scale.scaleOrdinal()
+            .domain(color_domain)
+            .range(color_range);
 
         this.drawLegend();
     }
