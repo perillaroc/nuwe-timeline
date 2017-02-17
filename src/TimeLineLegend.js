@@ -13,10 +13,7 @@ export class TimeLineLegend {
      *      data: {
      *          label: {
      *              text: ''
-     *          },
-     *          info:{
-     *              text: ''
-     *          },
+     *          }
      *          class_styles: [
      *              {class_name:'unknown', color: '#bdbdbd'},
      *          ]
@@ -106,23 +103,12 @@ export class TimeLineLegend {
             .attr("dominant-baseline", "central")
             .attr("text-anchor", "end")
             .text(data.label.text);
-
-
-        legend_bar.append('text')
-            .attr('x', 0)
-            .attr('y', 40)
-            .attr("dominant-baseline", "central")
-            .attr("text-anchor", "start")
-            .text(data.info.text);
     }
 }
 
 TimeLineLegend.default = {
     data: {
         label: {
-            text: ''
-        },
-        info:{
             text: ''
         },
         class_styles: [
