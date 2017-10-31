@@ -192,7 +192,7 @@ export class TimeLine {
                 return bar_width>=5?bar_width:5;
             })
             .attr('height', options.row.bar_height)
-            .style('fill', function(d,i){
+            .attr('fill', function(d,i){
                 if (! 'class' in d) {
                     d.class = 'unknown';
                 }
